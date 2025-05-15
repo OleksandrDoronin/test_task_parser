@@ -6,3 +6,4 @@ Scrapy==2.13.0
 pydantic~=2.11.4
 itemadapter~=0.11.0
 loguru==0.7.3
+schedule==1.2.2
