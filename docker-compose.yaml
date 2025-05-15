@@ -1,0 +1,30 @@
+services:
+  app:
+    build: .
+    container_name: autoria_scraper_app
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+    depends_on:
+      - postgres
+    networks:
+      - app_network
+    entrypoint: ["bash", "/entrypoint.sh"]
+
+  postgres:
+    image: postgres:16
+    container_name: olx_scraper_db
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+volumes:
+  postgres_data:
+
+networks:
+  app_network:
+    driver: bridge

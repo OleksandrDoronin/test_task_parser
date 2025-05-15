@@ -1,5 +1,4 @@
-from core.job_task import run_jobs, create_dump
+from core.job_task import run_jobs
 
-if __name__ == '__main__':
-    create_dump()
+if __name__ == "__main__":
     run_jobs()

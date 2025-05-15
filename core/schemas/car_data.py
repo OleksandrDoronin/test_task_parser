@@ -2,11 +2,13 @@ from datetime import datetime
 
 from pydantic import BaseModel, Field
 
+
 class CarDataBase(BaseModel):
     """
     Represents car listing data including details like price, mileage,
     VIN, photos count, and the datetime when the data was found.
     """
+
     url: str | None = None
     title: str | None = None
     price_usd: int | None = None
